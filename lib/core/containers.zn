@@ -110,9 +110,9 @@ Unit appendOwn(this List<T Type>, start Int, count Int) mut {
 }
 /// Whether `count` elements from `start` are the same as `count` of
 /// `other` from `otherStart`, as one comparison of their bytes. For lists
-/// of integers.
+/// of integers, bytes and truth values.
 Bool sameRange(this List<T Type>, start Int, other List<T>, otherStart Int, count Int) =>
-	Int(this._value:sameRange(start._value, other._value, otherStart._value, count._value)) == Int(1);
+	Bool(this._value:sameRange(start._value, other._value, otherStart._value, count._value));
 /// A hash of `count` elements from `start`, read a word at a time; equal
 /// ranges have equal hashes within one run of the program. For lists of integers.
 Int hashRange(this List<T Type>, start Int, count Int) => Int(this._value:hashRange(start._value, count._value));
