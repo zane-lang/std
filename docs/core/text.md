@@ -82,8 +82,8 @@ hllo
 
 ## Searching for bytes
 
-A `ByteSet` is a set of bytes, made from a `List<Bool>` of 256 flags (byte
-`b`'s flag at position `b + 1`) by `flags:byteSet()`. `s:findAny(from, count,
+A `ByteSet` is a set of bytes, made from an `ArrayRef<Bool, 256>` of flags
+(byte `b`'s flag at position `b + 1`) by `flags:byteSet()`. `s:findAny(from, count,
 set)` searches the `count` positions starting at `from`, and returns the first
 position whose byte is in `set`, or 0 when there is none.
 `s:findPair(from, count, first, gap, second)` returns the first position whose
@@ -97,11 +97,7 @@ import core$;
 
 Unit main() {
 	console Console(@program$console);
-	flags List<Bool> = List(Bool);
-	b Int(0);
-	b!to(Int(255)) {
-		flags!push(b == 44);
-	}
+	flags ArrayRef<Bool, 256> = ArrayRef.fill(256, Bool(i Int) => i == 45);
 	commas ByteSet = flags:byteSet();
 	line String = String("name,age,city");
 	first Int = line:findAny(Int(1), line:byteCount(), commas);

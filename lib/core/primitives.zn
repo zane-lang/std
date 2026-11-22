@@ -354,17 +354,17 @@ Float?Unit parseFloat(this String, start Int, count Int) {
 }
 
 /// A set of bytes, made from 256 flags by `byteSet`. `findAny` and `findPair`
-/// search a string for the bytes in a set.
+/// search a string for the bytes in a set (types.md §2.12).
 type ByteSet = struct {
-	_value @primitives$List<@primitives$U8>;
+	_value @primitives$ByteSet;
 }
-ByteSet(v @primitives$List<@primitives$U8>) => init{
+ByteSet(v @primitives$ByteSet) => init{
 	_value = v;
 }
 
-/// The set of the bytes whose flags are `true`: byte `b`'s flag is the list's
-/// element `b + 1`. The list holds 256 flags.
-ByteSet byteSet(this List<Bool>) => ByteSet(this._value:byteSet());
+/// The set of the bytes whose flags are `true`: byte `b`'s flag is the
+/// array's element `b + 1`.
+ByteSet byteSet(this ArrayRef<Bool, 256>) => ByteSet(this._value:byteSet());
 
 /// The first of the `count` positions from `from`, counted from 1 as
 /// `byteAt` counts, whose byte is in `first` and whose byte `gap` positions

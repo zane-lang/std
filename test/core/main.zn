@@ -543,13 +543,8 @@ Unit?@primitives$String main() {
 	checks!check((line:parseFloat(Int(3), Int(4)) ?? Float(0.0)) == 4.35);
 	checks!check((line:parseFloat(Int(8), Int(6)) ?? Float(0.0)) == ~Float(0.125));
 	checks!check((line:parseFloat(Int(1), Int(2)) ?? Float(1.5)) == 1.5);
-	commaFlags List<Bool> = List(Bool);
-	dashFlags List<Bool> = List(Bool);
-	flagByte Int = Int(0);
-	flagByte!to(255) {
-		commaFlags!push(flagByte == 44);
-		dashFlags!push(flagByte == 45);
-	}
+	commaFlags ArrayRef<Bool, 256> = ArrayRef.fill(256, Bool(i Int) => i == 45);
+	dashFlags ArrayRef<Bool, 256> = ArrayRef.fill(256, Bool(i Int) => i == 46);
 	commas ByteSet = commaFlags:byteSet();
 	dashes ByteSet = dashFlags:byteSet();
 	checks!check(line:findAny(1, line:byteCount(), commas) == 2 and line:findAny(3, 4, commas) == 0);

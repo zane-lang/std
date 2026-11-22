@@ -61,7 +61,7 @@ Unit main() {
 | `l!copyRange(at, from, start, count)` | copies `count` elements of `from`, from `start`, over the list's own elements, starting at `at` |
 | `l!sort()` | sorts the elements in place, ascending, for lists of `Int`, `I32` or `U8` |
 | `l!sortBy(keys)` | for a `List<I32>` of positions in the `List<Int>` `keys`, counted from 1: sorts the positions by the key at each, ascending, keeping positions with equal keys in order |
-| `l:sameRange(start, other, otherStart, count)` | whether two ranges hold the same elements, for lists of integers |
+| `l:sameRange(start, other, otherStart, count)` | whether two ranges hold the same elements, for lists of integers, `U8` or `Bool` |
 | `l:hashRange(start, count)` | a hash of a range, for lists of integers |
 
 `appendRange`, `appendOwn` and `copyRange` are for elements that own no

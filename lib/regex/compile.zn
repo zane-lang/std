@@ -634,12 +634,22 @@ Bool startsFrom(this _Builder, t Int) mut {
 // for that position start at element at*256+1. The set is empty when
 // `prefix` has no flags at that position.
 ByteSet _prefixSet(prefix List<Bool>, at Int) {
-	members List<Bool> = List(Int(256), Bool(false));
+	members ArrayRef<Bool, 256> = ArrayRef.fill(256, Bool(i Int) => Bool(false));
 	if(prefix:size() >= (at + 1) * 256) {
 		b Int = Int(1);
 		b!to(Int(256)) {
 			members[b] = prefix[at * 256 + b];
 		}
+	}
+	return members:byteSet();
+}
+
+// The byte set of a list of 256 flags.
+ByteSet _setOf(flags List<Bool>) {
+	members ArrayRef<Bool, 256> = ArrayRef.fill(256, Bool(i Int) => Bool(false));
+	b Int = Int(1);
+	b!to(Int(256)) {
+		members[b] = flags[b];
 	}
 	return members:byteSet();
 }
@@ -908,5 +918,5 @@ Regex finish(this _Builder, root Int) mut {
 	if(fallback) {
 		skip = Int(0);
 	}
-	return Regex._built(nullable, this.classes, this.reps:size(), forward, reverse, skip, inner:byteSet(), beforeTable, positions, at1, at2, set1, set2, fallback, this.groups, this.names, this.ops, this.xs, this.ys, this.sets, entry);
+	return Regex._built(nullable, this.classes, this.reps:size(), forward, reverse, skip, _setOf(inner), beforeTable, positions, at1, at2, set1, set2, fallback, this.groups, this.names, this.ops, this.xs, this.ys, this.sets, entry);
 }
