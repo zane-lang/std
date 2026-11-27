@@ -49,7 +49,7 @@ Unit main() {
 }
 ```
 
-## What is in it
+## Contents
 
 | File | What it declares |
 |---|---|

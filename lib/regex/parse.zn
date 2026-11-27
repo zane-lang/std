@@ -23,7 +23,7 @@ type _Builder = #struct {
 	// Syntax tree nodes, by kind: 1 the empty pattern, 2 a byte of set
 	// `one`, 3 node `one` followed by node `two`, 4 node `one` or else node
 	// `two`, 5 node `one` repeated `low` to `high` times (a `high` of -1
-	// means no upper bound), greedily or lazily, 6 node `one` captured as
+	// marks no upper bound), greedily or lazily, 6 node `one` captured as
 	// group `two`, 7 the assertion of kind `one` (see _assertions).
 	kinds List<Int>;
 	ones List<Int>;
@@ -31,8 +31,7 @@ type _Builder = #struct {
 	lows List<Int>;
 	highs List<Int>;
 	greedy List<Bool>;
-	// For each assertion kind, whether the pattern contains an assertion of
-	// that kind.
+	// Whether the pattern contains an assertion, indexed by assertion kind.
 	asserts List<Bool>;
 	// Byte sets, 256 flags per set: the flag of byte b in set k is at
 	// element (k-1)*256+b+1.

@@ -2,7 +2,7 @@
 
 This page covers `core`'s branching, loops and workers, which are ordinary functions that take a block.
 
-| Verb | What it does |
+| Verb | Effect |
 |---|---|
 | `if(condition) { … }` | runs the block when `condition` holds, and returns a `Bool` that records whether the block ran |
 | `chain!elif(condition) { … }` | on the `Bool` an `if` returned: runs the block when no earlier branch ran and `condition` holds |

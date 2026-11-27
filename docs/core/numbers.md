@@ -21,8 +21,8 @@ another number type. A parameter of type `I32` takes an integer literal as an
 
 `Int`, `Float`, `I32` and `F32` each have `+`, `-`, `*`, `/`, `~` (negation),
 `==`, `~=`, `<`, `>`, `<=` and `>=`. A literal may stand on either side of an
-operator whose other operand is one of these types, as long as it is the
-matching kind: an integer literal beside an `Int` or `I32`, a float literal
+operator whose other operand is one of these types, as long as the literal
+matches that type: an integer literal beside an `Int` or `I32`, a float literal
 beside a `Float` or `F32`. An operator does not convert its operands, so
 `Float(2.5) * 4` is an error; write `Float(2.5) * 4.0`:
 

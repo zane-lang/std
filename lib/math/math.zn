@@ -50,7 +50,7 @@ Float floor(value Float) => Float(@math$floor(value));
 Float ceil(value Float) => Float(@math$ceil(value));
 /// Rounded toward zero to an integer.
 Float trunc(value Float) => Float(@math$trunc(value));
-/// Rounded to the nearest integer, a tie going to the even one.
+/// Rounded to the nearest integer, a tie going to the even integer.
 Float roundEven(value Float) => Float(@math$roundEven(value));
 /// `left * right + addend`, rounded once.
 Float fma(left Float, right Float, addend Float) => Float(@math$fma(left, right, addend));
@@ -124,7 +124,7 @@ F32 floor(value F32) => F32(@math$floor(value));
 F32 ceil(value F32) => F32(@math$ceil(value));
 /// Rounded toward zero to an integer.
 F32 trunc(value F32) => F32(@math$trunc(value));
-/// Rounded to the nearest integer, a tie going to the even one.
+/// Rounded to the nearest integer, a tie going to the even integer.
 F32 roundEven(value F32) => F32(@math$roundEven(value));
 /// `left * right + addend`, rounded once.
 F32 fma(left F32, right F32, addend F32) => F32(@math$fma(left, right, addend));

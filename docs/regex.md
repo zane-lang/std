@@ -112,8 +112,8 @@ pattern does not have, and every group of a search that found nothing give a
 ## Pattern syntax
 
 Matching is **leftmost-first**, as in Perl, PCRE, Python and Rust: of the
-matches that start leftmost, the one the pattern prefers wins, so `a|ab` on
-`ab` matches `a`.
+matches that start leftmost, the match that a backtracking engine finds first
+wins, so `a|ab` on `ab` matches `a`.
 
 | Pattern | Matches |
 |---|---|
@@ -147,11 +147,11 @@ itself, so a literal non-ASCII character matches, but `.` takes one byte of it.
 
 Not supported: look-ahead and look-behind (`(?=`, `(?!`, `(?<=`, `(?<!`),
 back-references, possessive repeats, atomic groups, Unicode classes, and the
-`x` flag. `compile` refuses each of them with a `RegexError` instead of reading
-it some other way.
+`x` flag. `compile` refuses each of them with a `RegexError` instead of giving
+it another meaning.
 
 A repeat of a part that can itself match the empty string, such as `(a*)*` or
-`(?:x?)+`, may choose a different match, or different groups, from a
+`(?:x?)+`, may produce a different match, or different groups, from a
 backtracking engine's: which of its empty iterations wins depends on the order
 a backtracking engine tries them in.
 
