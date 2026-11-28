@@ -15,9 +15,9 @@ Int inst(this _Builder, op Int, x Int, y Int) mut {
 	return this.ops:size();
 }
 
-// The kind that an assertion has in the reversed pattern: the start of the
-// text and the end of the text swap, and so do the start of a line and the
-// end of a line.
+// `_reversed` maps an assertion to its counterpart in the reversed pattern:
+// the start of the text and the end of the text swap, and so do the start of
+// a line and the end of a line.
 Int _reversed(kind Int) {
 	if(kind == 1) {
 		return Int(2);

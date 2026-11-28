@@ -83,8 +83,8 @@ Float(v @primitives$F64) => init{
 }
 Float(v @primitives$I64) => Float(@primitives$F64.round(v));
 Float(v Int) => Float(v._value);
-/// Takes an integer literal as the argument: `Float(3)`. A program uses `I32`
-/// and `F32` only when it asks for them, so a bare integer literal is read as
+/// Takes an integer literal as the argument: `Float(3)`. A program gets `I32`
+/// and `F32` only by naming them, so the compiler reads a bare integer literal as
 /// an `Int` (generics.md §5.4).
 Float(v @concepts$Int) => Float(Int(v));
 implicit Float(v @concepts$Float) => Float(@primitives$F64(v));
@@ -191,7 +191,7 @@ F32(v @primitives$F32) => init{
 }
 implicit F32(v @concepts$Float) => F32(@primitives$F32(v));
 implicit @primitives$F32(v F32) => v._value;
-/// The `F32` nearest `v`, a tie going to the even one.
+/// The `F32` nearest `v`, a tie going to the even value.
 F32.round(v Float) => F32(@primitives$F32.round(v._value));
 F32.round(v I32) => F32(@primitives$F32.round(v._value));
 F32.round(v Int) => F32(@primitives$F32.round(v._value));

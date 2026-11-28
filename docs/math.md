@@ -45,7 +45,7 @@ every system and at compile time as at run time.
 | `abs(x)` | the magnitude |
 | `floor(x)`, `ceil(x)` | rounded down, up |
 | `trunc(x)` | rounded toward zero |
-| `roundEven(x)` | rounded to the nearest integer, a tie going to the even one |
+| `roundEven(x)` | rounded to the nearest integer, a tie going to the even integer |
 | `fma(a, b, c)` | `a * b + c`, rounded once |
 | `copySign(magnitude, sign)` | `magnitude` with the sign of `sign` |
 | `min(a, b)`, `max(a, b)` | the lesser, the greater; NaN when either is NaN |

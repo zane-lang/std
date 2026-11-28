@@ -31,7 +31,7 @@ Hello
 0 arguments
 ```
 
-| Verb | What it does |
+| Verb | Effect |
 |---|---|
 | `Console(@program$console)` | the program's console |
 | `console!print(text)` | writes `text` and a newline to standard output |

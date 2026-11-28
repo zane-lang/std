@@ -28,7 +28,7 @@ Zane has 4 bytes
 42 and 2.5
 ```
 
-| Verb | What it does |
+| Verb | Effect |
 |---|---|
 | `a + b` | joins two strings; either may be a literal |
 | `a == b`, `a ~= b` | compares the bytes |

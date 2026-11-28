@@ -60,7 +60,7 @@ sum 12
 both workers finished
 ```
 
-| Verb | What it does |
+| Verb | Effect |
 |---|---|
 | `WorkerPool(T, state, funnel)` | a pool of elements of type `T`, whose workers share `state`, which `funnel` writes |
 | `WorkerPool(T)` | a pool of elements of type `T`, whose workers share nothing |

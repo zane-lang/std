@@ -47,15 +47,15 @@ Unit main() {
 3 4
 ```
 
-| Verb | What it does |
+| Verb | Effect |
 |---|---|
 | `List(T)` | an empty list of `T` |
 | `List(n, value)` | `n` copies of `value`, made in one block |
 | `l:size()` | the number of elements |
 | `l[i]` | the element at `i`, which may be assigned |
 | `l!push(value)` | adds `value` at the end |
-| `l!remove(i)` | takes out the element at `i` and returns it, shifting the later ones down |
-| `l!swapRemove(i)` | takes out the element at `i` and moves the last one into its place: faster, but the order changes |
+| `l!remove(i)` | takes out the element at `i` and returns it, shifting the later elements down |
+| `l!swapRemove(i)` | takes out the element at `i` and moves the last element into its place: faster, but the order changes |
 | `l!appendRange(from, start, count)` | copies `count` elements of `from`, from `start`, onto the end |
 | `l!appendOwn(start, count)` | copies `count` elements of the list itself, from `start`, onto the end |
 | `l!copyRange(at, from, start, count)` | copies `count` elements of `from`, from `start`, over the list's own elements, starting at `at` |
